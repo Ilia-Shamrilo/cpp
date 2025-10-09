@@ -3,7 +3,6 @@
 //
 
 #include "String.h"
-#include <iostream>
 
 MyString::MyString(): ptrBegin(nullptr), size(0), capacity(0){}
 
@@ -338,7 +337,7 @@ size_t MyString::find(const MyString& substr) const{
 }
 
 size_t MyString::rfind(char findCharakter) const {
-    for (int i = size - 1; i >= 0; --i) {
+    for (int i = static_cast<int>(size) - 1; i >= 0; --i) {
         if (ptrBegin[i] == findCharakter) return i;
     }
     return npos;
